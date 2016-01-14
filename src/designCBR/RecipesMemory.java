@@ -1,30 +1,32 @@
 package designCBR;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import coffeeStructure.CoffeeRecipe;
 
 public class RecipesMemory {
 
-	private ArrayList<CoffeeRecipe> recipes;
+	protected Map<String,CoffeeRecipe> recipes;
 	
 	public RecipesMemory() {
-		
-		setRecipes(new ArrayList<>());
+		recipes = new HashMap<String,CoffeeRecipe>();
 	}
 	
-	public boolean addRecipe(CoffeeRecipe recipe) {
-		return recipes.add(recipe);
+	public void addRecipe(CoffeeRecipe recipe) {
+		recipes.put(recipe.getName(), recipe);
 	}
 
-	public ArrayList<CoffeeRecipe> getRecipes() {
+	public Map<String, CoffeeRecipe> getRecipes() {
 		return recipes;
 	}
 
-	public void setRecipes(ArrayList<CoffeeRecipe> recipes) {
+	public void setRecipes(Map<String,CoffeeRecipe> recipes) {
 		this.recipes = recipes;
 	}
-	
+
 	@Override
 	public String toString() {
 		return recipes.toString();

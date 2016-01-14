@@ -1,5 +1,7 @@
 package designCBR;
 
+import coffeeStructure.Component;
+
 public class CBR {
 	private RecipesMemory caseMemory;
 	
@@ -16,8 +18,8 @@ public class CBR {
 		cbrRetainComponent = new CBRRetain(this.caseMemory);
 	}
 	
-	public void cbrAlgorithm(){
-		
+	public void applyCBR(Component newRecipe){
+		cbrRetrieveComponent.retrieveSimilarComponent(newRecipe);
 	}
 	
 	

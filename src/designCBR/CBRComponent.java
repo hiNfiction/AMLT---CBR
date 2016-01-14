@@ -1,7 +1,7 @@
 package designCBR;
 
 public abstract class CBRComponent {
-	private RecipesMemory caseMemory;
+	protected RecipesMemory caseMemory;
 	
 	public CBRComponent(RecipesMemory caseMemory){
 		this.caseMemory = caseMemory;
