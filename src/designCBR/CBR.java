@@ -19,7 +19,10 @@ public class CBR {
 	}
 	
 	public void applyCBR(Component newRecipe){
-		cbrRetrieveComponent.retrieveSimilarComponent(newRecipe);
+		Component similarComponent = cbrRetrieveComponent.retrieveSimilarComponent(newRecipe);
+		newRecipe = cbrReuseComponent.reuse(similarComponent,newRecipe);
+		//CBRRevise???
+		cbrRetainComponent.retain(newRecipe);
 	}
 	
 	
