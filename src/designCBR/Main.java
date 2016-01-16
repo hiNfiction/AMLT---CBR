@@ -13,7 +13,7 @@ public class Main {
 		CoffeeRecipe cappuccino = basicR.makeCappuccino();
 		recipesMem.addRecipe(espressoShot);
 		recipesMem.addRecipe(cappuccino);
-		
+		/**
 		System.out.println("Print recipes database");
 		System.out.println(recipesMem);
 		System.out.println("\n__Print Espresso Shot ingredients__");
@@ -25,6 +25,7 @@ public class Main {
 		System.out.println(cappuccino.getComponents());
 		System.out.println("__Print Cappuccino first step of recipe__");
 		System.out.println(cappuccino.getRecipe());
+		**/
 	}
 
 }

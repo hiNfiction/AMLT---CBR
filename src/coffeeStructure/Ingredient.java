@@ -9,6 +9,7 @@ public class Ingredient extends Component {
 
 	private Unit unit;
 	
+	public Ingredient(){}
 	public Ingredient(String name, float quantity, Unit unit) {
 		
 		this.setName(name);
@@ -17,6 +18,8 @@ public class Ingredient extends Component {
 		
 	}
 	
+
+
 	public Unit getUnit() {
 		return unit;
 	}
