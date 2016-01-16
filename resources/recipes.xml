@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RECIPES>
+	<COFFEERECIPES>
+		<NAME>Espresso Shot</NAME>
+		<INGREDIENTS>
+			<INGREDIENT>
+				<NAME>Water</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Ground coffee</NAME>
+				<QUANTITY>20</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+		</INGREDIENTS>
+		<STEPS>
+			<STEP>Use an espresso machine; all the ingredients are to be added there</STEP>
+			<STEP>Add 100 MILLIMETERS of Water</STEP>
+			<STEP>Pre-warm the demitasse</STEP>
+			<STEP>Grind the coffee</STEP>
+			<STEP>Position the demitasse</STEP>
+			<STEP>Add 20 GRAMS of Ground coffee</STEP>
+			<STEP>Tamp the ground coffee</STEP>
+			<STEP>Brew the espresso for an optimal time(usually around 22 seconds)</STEP>
+		</STEPS>
+	</COFFEERECIPES>
+</RECIPES>
