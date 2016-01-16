@@ -1,6 +1,6 @@
 package coffeeStructure;
 
-public class Component {
+public abstract class Component {
 
 	String name;
 	float quantity;
