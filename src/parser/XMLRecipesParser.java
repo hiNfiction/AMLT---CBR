@@ -39,7 +39,14 @@ public class XMLRecipesParser {
 			
 			//Extracts the root element <RECIPES>
 			Element root = document.getDocumentElement();
-			
+			RecipesMemory caseMemory = new RecipesMemory();
+
+			/**------------------------------------------------------------------------
+			 * ------------------------------------------------------------------------
+			 * Read CoffeRecipes
+			 * ------------------------------------------------------------------------
+			 * ------------------------------------------------------------------------
+			 */
 			NodeList coffeeRecipesNodeList = root.getChildNodes();
 			for(int i = 0; i < coffeeRecipesNodeList.getLength(); i++){
 				//<CoffeeRecipe> tag found
@@ -90,6 +97,8 @@ public class XMLRecipesParser {
 									ingredient.setUnit(Unit.MILLILITERS);
 								case "GRAMS":
 									ingredient.setUnit(Unit.GRAMS);
+								case "BOUNCES":
+									ingredient.setUnit(Unit.BOUNCES);
 							}
 							
 							//Add ingredient to the current recipe
@@ -121,18 +130,13 @@ public class XMLRecipesParser {
 							recipe.getSteps().add(step);	
 						}
 					}
+					caseMemory.addRecipe(recipe);
 				}
-				
 			}
-		
-		
-		
+			return caseMemory;
 		}catch(IOException | ParserConfigurationException | SAXException io){
 			throw io;
-		}
-		RecipesMemory caseMemory = new RecipesMemory();
-		return caseMemory;
-		
+		}		
 	}
 
 }

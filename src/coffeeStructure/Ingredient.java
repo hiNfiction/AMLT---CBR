@@ -4,7 +4,8 @@ public class Ingredient extends Component {
 	
 	public enum Unit {
 		MILLILITERS,
-		GRAMS		
+		GRAMS,
+		BOUNCES
 	}
 
 	private Unit unit;
