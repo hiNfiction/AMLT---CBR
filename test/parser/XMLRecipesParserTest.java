@@ -7,7 +7,6 @@ import designCBR.RecipesMemory;
 
 public class XMLRecipesParserTest {
 
-
 	@Test
 	public void parseXMLRecipesTest() throws Exception {
 		XMLRecipesParser parser = new XMLRecipesParser();

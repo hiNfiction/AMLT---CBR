@@ -19,7 +19,11 @@ import coffeeStructure.Ingredient.Unit;
 import coffeeStructure.Step;
 import designCBR.CaseMemory;
 import designCBR.RecipesMemory;
-
+/**
+ * Implementation of the XMLParser interface.
+ * @author dgl3
+ *
+ */
 public class XMLRecipesParser implements XMLParser{
 	
 	/**

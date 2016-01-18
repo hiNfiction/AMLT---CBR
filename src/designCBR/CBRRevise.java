@@ -1,9 +1,8 @@
 package designCBR;
 
-public class CBRRevise extends CBRComponent{
+import coffeeStructure.Component;
 
-	public CBRRevise(RecipesMemory caseMemory) {
-		super(caseMemory);
-	}
+public interface CBRRevise {
 
+	public void revise(Component component);
 }

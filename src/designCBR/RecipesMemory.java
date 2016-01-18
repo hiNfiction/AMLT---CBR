@@ -5,7 +5,11 @@ import java.util.Map;
 
 import coffeeStructure.CoffeeRecipe;
 import coffeeStructure.Component;
-
+/**
+ * Extends the CaseMemory abstract class. Implementation of the CaseMemory containing CoffeeRecipes
+ * @author dgl3
+ *
+ */
 public class RecipesMemory extends CaseMemory{
 
 	protected Map<String,CoffeeRecipe> memory;
