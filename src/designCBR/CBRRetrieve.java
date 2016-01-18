@@ -19,10 +19,10 @@ public class CBRRetrieve extends CBRComponent{
 				
 	}
 	
-	public Component retrieveSimilarComponent(Component newRecipe){
-		for(Component comp: caseMemory.getRecipes().values()){
-			if(comp instanceof CoffeeRecipe){
-				CoffeeRecipe recipe = (CoffeeRecipe) comp;
+	public Object retrieveSimilarComponent(Component newRecipe){
+		for(Object obj: caseMemory.getComponents().values()){
+			if(obj instanceof CoffeeRecipe){
+				CoffeeRecipe recipe = (CoffeeRecipe) obj;
 				int distance = Distances.LevenshteinDistance(recipe.getName(), newRecipe.getName());
 				distances.put(recipe.getName(), distance);
 				if(distance < distSimRecipe){
@@ -31,7 +31,7 @@ public class CBRRetrieve extends CBRComponent{
 				}
 			}
 		}
-		return caseMemory.getRecipes().get(similarRecipe);
+		return caseMemory.getComponents().get(similarRecipe);
 	}
 
 	

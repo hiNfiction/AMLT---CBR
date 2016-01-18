@@ -11,8 +11,8 @@ public class Main {
 		RecipesMemory recipesMem = new RecipesMemory();
 		CoffeeRecipe espressoShot = basicR.makeEspressoShot();
 		CoffeeRecipe cappuccino = basicR.makeCappuccino();
-		recipesMem.addRecipe(espressoShot);
-		recipesMem.addRecipe(cappuccino);
+		recipesMem.addComponent(espressoShot);
+		recipesMem.addComponent(cappuccino);
 		/**
 		System.out.println("Print recipes database");
 		System.out.println(recipesMem);

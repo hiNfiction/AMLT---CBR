@@ -4,29 +4,30 @@ import java.util.HashMap;
 import java.util.Map;
 
 import coffeeStructure.CoffeeRecipe;
+import coffeeStructure.Component;
 
-public class RecipesMemory {
+public class RecipesMemory extends CaseMemory{
 
-	protected Map<String,CoffeeRecipe> recipes;
+	protected Map<String,CoffeeRecipe> memory;
 	
 	public RecipesMemory() {
-		recipes = new HashMap<String,CoffeeRecipe>();
-	}
-	
-	public void addRecipe(CoffeeRecipe recipe) {
-		recipes.put(recipe.getName(), recipe);
-	}
-
-	public Map<String, CoffeeRecipe> getRecipes() {
-		return recipes;
-	}
-
-	public void setRecipes(Map<String,CoffeeRecipe> recipes) {
-		this.recipes = recipes;
+		memory = new HashMap<String,CoffeeRecipe>();
 	}
 
 	@Override
-	public String toString() {
-		return recipes.toString();
+	public void addComponent(Component component) {
+		if(component instanceof CoffeeRecipe) {
+			memory.put(component.getName(), (CoffeeRecipe) component);}
+		
+	}
+
+	@Override
+	public Map getComponents() {
+		return memory;
+	}
+
+	@Override
+	public void setComponent(Map memory) {
+			this.memory = memory;
 	}
 }

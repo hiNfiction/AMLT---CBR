@@ -11,7 +11,7 @@ public class CBRRetain extends CBRComponent{
 	
 	public void retain(Component comp){
 		if(comp instanceof CoffeeRecipe) 
-			caseMemory.getRecipes().put(comp.getName(), (CoffeeRecipe)comp);
+			caseMemory.getComponents().put(comp.getName(), (CoffeeRecipe)comp);
 	}
 
 }

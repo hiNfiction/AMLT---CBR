@@ -7,11 +7,14 @@ import designCBR.RecipesMemory;
 
 public class XMLRecipesParserTest {
 
+
 	@Test
 	public void parseXMLRecipesTest() throws Exception {
-		RecipesMemory caseMemory = XMLRecipesParser.parseXMLRecipes();
+		XMLRecipesParser parser = new XMLRecipesParser();
+		RecipesMemory caseMemory = (RecipesMemory) parser.parseXML();
 		System.out.println(caseMemory.toString());
 		assertNotNull(caseMemory);
 	}
+	
 
 }

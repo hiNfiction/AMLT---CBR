@@ -17,16 +17,17 @@ import coffeeStructure.CoffeeRecipe;
 import coffeeStructure.Ingredient;
 import coffeeStructure.Ingredient.Unit;
 import coffeeStructure.Step;
+import designCBR.CaseMemory;
 import designCBR.RecipesMemory;
 
-public class XMLRecipesParser {
+public class XMLRecipesParser implements XMLParser{
 	
 	/**
 	 * Parses the xml file containing all the recipes and returns the case memory of the cbr
 	 * @return RecipeMemory It is the case memory of the CBR
 	 * @throws Exception
 	 */
-	public static RecipesMemory parseXMLRecipes() throws Exception{
+	public CaseMemory parseXML() throws Exception{
 		//DOM Builder Factory
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		
@@ -130,7 +131,7 @@ public class XMLRecipesParser {
 							recipe.getSteps().add(step);	
 						}
 					}
-					caseMemory.addRecipe(recipe);
+					caseMemory.addComponent(recipe);
 				}
 			}
 			return caseMemory;
