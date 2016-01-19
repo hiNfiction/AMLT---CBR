@@ -27,7 +27,8 @@ public class CBRRetrieveImpl extends CBRComponent implements CBRRetrieve{
 		for(Object obj: caseMemory.getComponents().values()){
 			if(obj instanceof CoffeeRecipe){
 				CoffeeRecipe recipe = (CoffeeRecipe) obj;
-				int distance = Distances.LevenshteinDistance(recipe.getName(), component.getName());
+				int distance = Distances.LevenshteinDistance(recipe.getName()
+						.toLowerCase(), component.getName().toLowerCase());
 				distances.put(recipe.getName(), distance);
 				if(distance < distSimRecipe){
 					distSimRecipe = distance;
@@ -35,6 +36,7 @@ public class CBRRetrieveImpl extends CBRComponent implements CBRRetrieve{
 				}
 			}
 		}
+
 		return caseMemory.getComponents().get(similarRecipe);
 	}
 

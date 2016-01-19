@@ -1,20 +1,18 @@
 package coffeeStructure;
 
+/**
+ * Add component to the steps of the recipe
+ * - either ingredient or another type of coffee
+ * @author Stefania
+ *
+ */
 public class AddComponentStep extends Step {
 
 	private Component component;
 	
 	public AddComponentStep(Component component) {
 		this.setComponent(component);
-		if (component instanceof Ingredient) {
-			Ingredient ingr = (Ingredient) component;
-			this.description = "Add " + ingr.getQuantity() + " "
-					+ ingr.getUnit() + " of " + ingr.getName();
-		} else {
-			CoffeeRecipe coffee = (CoffeeRecipe) component;
-			this.description = "Add " + coffee.getName() + " of "
-					+ coffee.getName();
-		}
+		this.setDescription("Add " + component.getName());
 	}
 
 	public Component getComponent() {

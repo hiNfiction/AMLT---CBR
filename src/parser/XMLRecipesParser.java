@@ -13,7 +13,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import coffeeStructure.AddComponentStep;
 import coffeeStructure.CoffeeRecipe;
+import coffeeStructure.Component;
 import coffeeStructure.Ingredient;
 import coffeeStructure.Ingredient.Unit;
 import coffeeStructure.Step;
@@ -68,7 +70,40 @@ public class XMLRecipesParser implements XMLParser{
 					System.out.println("Type : " + coffeeRecipeElement.getElementsByTagName("TYPE").item(0).getTextContent());
 					recipe.setName(coffeeRecipeElement.getElementsByTagName("TYPE").item(0).getTextContent());
 					
+
+					/**------------------------------------------------------------------------
+					 * ------------------------------------------------------------------------
+					 * Set CoffeeRecipe's Components - which are other coffee recipes
+					 * ------------------------------------------------------------------------
+					 * ------------------------------------------------------------------------
+					 */
+					NodeList componentsNodeList = coffeeRecipeElement.getElementsByTagName("COMPONENT");
+					for(int j = 0; j < componentsNodeList.getLength(); j++){
+						Node ingredientNode = componentsNodeList.item(j);
+						System.out.println("\nCurrent Element :" 
+					               + ingredientNode.getNodeName());
+						
+						if (ingredientNode.getNodeType() == Node.ELEMENT_NODE){
+							CoffeeRecipe component = new CoffeeRecipe();
+
+							//Get the element Ingredient
+							Element ingredientElement = (Element) ingredientNode;
+							
+							//Set ingredient's name
+							System.out.println("Name : " + ingredientElement.getElementsByTagName("NAME").item(0).getTextContent());
+							component.setName(ingredientElement.getElementsByTagName("NAME").item(0).getTextContent());
+							
+							//Set ingredient's quantity
+							System.out.println("Quantity : " + ingredientElement.getElementsByTagName("QUANTITY").item(0).getTextContent());
+							component.setQuantity(Float.parseFloat(ingredientElement.getElementsByTagName("QUANTITY").item(0).getTextContent()));		
+							
+							//Add ingredient to the current recipe
+							recipe.addComponent(component);	
+						}
+						
+					}
 					
+
 					/**------------------------------------------------------------------------
 					 * ------------------------------------------------------------------------
 					 * Set CoffeeRecipe's Ingredients
@@ -98,12 +133,14 @@ public class XMLRecipesParser implements XMLParser{
 							//Set ingredient's unit
 							System.out.println("Unit : " + ingredientElement.getElementsByTagName("UNIT").item(0).getTextContent());
 							switch(ingredientElement.getElementsByTagName("UNIT").item(0).getTextContent()){
-								case "MILLIMETERS":
+								case "MILLILITERS":
 									ingredient.setUnit(Unit.MILLILITERS);
+									break;
 								case "GRAMS":
 									ingredient.setUnit(Unit.GRAMS);
-								case "BOUNCES":
-									ingredient.setUnit(Unit.BOUNCES);
+									break;
+								case "OUNCES":
+									ingredient.setUnit(Unit.OUNCES);
 							}
 							
 							//Add ingredient to the current recipe
@@ -124,14 +161,13 @@ public class XMLRecipesParser implements XMLParser{
 						System.out.println("\nCurrent Element :" 
 					               + stepNode.getNodeName());	
 						if (stepNode.getNodeType() == Node.ELEMENT_NODE){
-							Step step = new Step();
 							
 							//Get the element Step
 							Element stepElement = (Element) stepNode;
 							
 							//Set step's description
 							System.out.println("Description : " + stepElement.getTextContent());
-							step.setDescription(stepElement.getNodeValue());
+							Step step = processStep(stepElement.getTextContent(), recipe);
 							recipe.getSteps().add(step);	
 						}
 					}
@@ -142,6 +178,28 @@ public class XMLRecipesParser implements XMLParser{
 		}catch(IOException | ParserConfigurationException | SAXException io){
 			throw io;
 		}		
+	}
+	
+	Step processStep(String stepDescription, CoffeeRecipe recipe) {
+		
+		Step step = null;
+		String restOfDescr = stepDescription.toLowerCase();
+		String finalDescr = "";
+		String addStr = "add ";
+		
+		int searchIndex = restOfDescr.indexOf("add ");
+		if(searchIndex > -1) {
+			restOfDescr = restOfDescr.substring(searchIndex + addStr.length());
+			searchIndex += addStr.length();
+			for(Component comp: recipe.getComponents()) {
+				comp.toString();
+				if(restOfDescr.indexOf(comp.getName(), searchIndex) > -1) {
+					return new AddComponentStep(comp);
+				}
+			}
+		}
+		
+		return new Step(stepDescription);
 	}
 
 }
