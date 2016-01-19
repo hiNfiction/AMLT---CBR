@@ -1,0 +1,273 @@
+<RECIPES>
+	<COFFEERECIPE>
+		<TYPE>Espresso Shot</TYPE>
+		<INGREDIENTS>
+			<INGREDIENT>
+				<NAME>Water</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Ground coffee</NAME>
+				<QUANTITY>20</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+		</INGREDIENTS>
+		<STEPS>
+			<STEP>Use an espresso machine; all the ingredients are to be added there</STEP>
+			<STEP>Add 100 MILLIMETERS of Water</STEP>
+			<STEP>Pre-warm the demitasse</STEP>
+			<STEP>Grind the coffee</STEP>
+			<STEP>Position the demitasse</STEP>
+			<STEP>Add 20 GRAMS of Ground coffee</STEP>
+			<STEP>Tamp the ground coffee</STEP>
+			<STEP>Brew the espresso for an optimal time(usually around 22 seconds)</STEP>
+		</STEPS>
+	</COFFEERECIPE>
+	<COFFEERECIPE>
+		<TYPE>Caffee Americano</TYPE>
+		<INGREDIENTS>
+			<INGREDIENT>
+				<NAME>Water</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Ground coffee</NAME>
+				<QUANTITY>20</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Hot water</NAME>
+				<QUANTITY>6</QUANTITY>
+				<UNIT>BOUNCES</UNIT>
+			</INGREDIENT>
+		</INGREDIENTS>
+		<STEPS>
+			<STEP>Use an espresso machine; all the ingredients are to be added there</STEP>
+			<STEP>Add 100 MILLIMETERS of Water</STEP>
+			<STEP>Pre-warm the demitasse</STEP>
+			<STEP>Grind the coffee</STEP>
+			<STEP>Position the demitasse</STEP>
+			<STEP>Add 20 GRAMS of Ground coffee</STEP>
+			<STEP>Tamp the ground coffee</STEP>
+			<STEP>Brew the espresso for an optimal time(usually around 22 seconds)</STEP>
+			<STEP>Add 6 bounces of hot water</STEP>
+		</STEPS>
+	</COFFEERECIPE>
+	<COFFEERECIPE>
+		<TYPE>Double Espresso</TYPE>
+		<INGREDIENTS>
+			<INGREDIENT>
+				<NAME>Water</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Ground coffee</NAME>
+				<QUANTITY>20</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+		</INGREDIENTS>
+		<STEPS>
+			<STEP>Pull two espresso shots</STEP>
+		</STEPS>
+	</COFFEERECIPE>
+	<COFFEERECIPE>
+		<TYPE>Espresso Creme</TYPE>
+		<INGREDIENTS>
+			<INGREDIENT>
+				<NAME>Water</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Ground coffee</NAME>
+				<QUANTITY>20</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Heavy cream</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+		</INGREDIENTS>
+		<STEPS>
+			<STEP>Pull one shot of espresso</STEP>
+			<STEP>Add one ounce of heavy cream</STEP>
+		</STEPS>
+	</COFFEERECIPE>
+	<COFFEERECIPE>
+		<TYPE>Espresso Cubano</TYPE>
+		<INGREDIENTS>
+			<INGREDIENT>
+				<NAME>Water</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Ground coffee</NAME>
+				<QUANTITY>20</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Sugar</NAME>
+				<QUANTITY>10</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+		</INGREDIENTS>
+		<STEPS>
+			<STEP>Pull two shots of espresso</STEP>
+			<STEP>Add raw sugar to taste</STEP>
+		</STEPS>
+	</COFFEERECIPE>
+	<COFFEERECIPE>
+		<TYPE>Espresso Granita</TYPE>
+		<INGREDIENTS>
+			<INGREDIENT>
+				<NAME>Water</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Ground coffee</NAME>
+				<QUANTITY>20</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Sugar</NAME>
+				<QUANTITY>10</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+		</INGREDIENTS>
+		<STEPS>
+			<STEP>Pull two shots of espresso</STEP>
+			<STEP>Add sugar to taste</STEP>
+			<STEP>Put the beverage in the freezer</STEP>
+			<STEP>When it is mostly frozen take it out and crush it up</STEP>
+		</STEPS>
+	</COFFEERECIPE>
+	<COFFEERECIPE>
+		<TYPE>Espresso Breve</TYPE>
+		<INGREDIENTS>
+			<INGREDIENT>
+				<NAME>Water</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Ground coffee</NAME>
+				<QUANTITY>20</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Steamed light cream</NAME>
+				<QUANTITY>50</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Heated light cream</NAME>
+				<QUANTITY>50</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+		</INGREDIENTS>
+		<STEPS>
+			<STEP>Pull one shot of espresso</STEP>
+			<STEP>Add both the steamed and the heated light cream</STEP>
+		</STEPS>
+	</COFFEERECIPE>
+	<COFFEERECIPE>
+		<TYPE>Espresso Romano</TYPE>
+		<INGREDIENTS>
+			<INGREDIENT>
+				<NAME>Water</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Ground coffee</NAME>
+				<QUANTITY>20</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Slice of lemon</NAME>
+				<QUANTITY>1</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+		</INGREDIENTS>
+		<STEPS>
+			<STEP>Pull one shot of espresso</STEP>
+			<STEP>Add the fresh slice/peel of lemon on top</STEP>
+		</STEPS>
+	</COFFEERECIPE>
+	<COFFEERECIPE>
+		<TYPE>Espresso Granita Latte</TYPE>
+		<INGREDIENTS>
+			<INGREDIENT>
+				<NAME>Water</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Ground coffee</NAME>
+				<QUANTITY>20</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Sugar</NAME>
+				<QUANTITY>10</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Steamed milk</NAME>
+				<QUANTITY>1000</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+		</INGREDIENTS>
+		<STEPS>
+			<STEP>Pull two shots of espresso</STEP>
+			<STEP>Add sugar to taste</STEP>
+			<STEP>Add milk</STEP>
+			<STEP>Put the beverage in the freezer</STEP>
+			<STEP>When it is mostly frozen take it out and crush it up</STEP>
+		</STEPS>
+	</COFFEERECIPE>
+	<COFFEERECIPE>
+		<TYPE>Cappuccino</TYPE>
+		<INGREDIENTS>
+			<INGREDIENT>
+				<NAME>Steamed milk</NAME>
+				<QUANTITY>50</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Foam</NAME>
+				<QUANTITY>50</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Water</NAME>
+				<QUANTITY>100</QUANTITY>
+				<UNIT>MILLIMETERS</UNIT>
+			</INGREDIENT>
+			<INGREDIENT>
+				<NAME>Ground coffee</NAME>
+				<QUANTITY>20</QUANTITY>
+				<UNIT>GRAMS</UNIT>
+			</INGREDIENT>
+		</INGREDIENTS>
+		<STEPS>
+			<STEP>Add 50 MILLIMETERS of Steamed milk</STEP>
+			<STEP>Use an espresso machine; all the ingredients are to be added there</STEP>
+			<STEP>Add 100 MILLIMETERS of Water</STEP>
+			<STEP>Pre-warm the demitasse</STEP>
+			<STEP>Grind the coffee</STEP>
+			<STEP>Position the demitasse</STEP>
+			<STEP>Add 20 GRAMS of Ground coffee</STEP>
+			<STEP>Tamp the ground coffee</STEP>
+			<STEP>Brew the espresso for an optimal time(usually around 22 seconds)</STEP>
+			<STEP>Add 20 GRAMS of foam</STEP>
+		</STEPS>
+	</COFFEERECIPE>
+
+</RECIPES>

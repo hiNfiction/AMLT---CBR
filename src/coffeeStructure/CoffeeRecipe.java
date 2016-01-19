@@ -5,10 +5,14 @@ import java.util.ArrayList;
 public class CoffeeRecipe extends Component {
 
 	private ArrayList<Component> components;
-	private Step recipe;
+	private ArrayList<Step> steps;
+	
+	public CoffeeRecipe(){
+		this.setComponents(new ArrayList<Component>());
+		this.setSteps(new ArrayList<Step>());
+	}
 	
 	public CoffeeRecipe(String name) {
-		
 		this.setName(name);
 		this.setComponents(new ArrayList<>());
 	}
@@ -25,12 +29,12 @@ public class CoffeeRecipe extends Component {
 		this.components = components;
 	}
 
-	public Step getRecipe() {
-		return recipe;
+	public ArrayList<Step> getSteps() {
+		return steps;
 	}
 
-	public void setRecipe(Step recipe) {
-		this.recipe = recipe;
+	public void setSteps(ArrayList<Step> steps) {
+		this.steps = steps;
 	}
 	
 	@Override

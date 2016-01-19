@@ -41,7 +41,7 @@ public class BasicRecipes {
 		Step stepSix = stepFive.addNextStep(new Step("Tamp the ground coffee"));
 		stepSix.addNextStep(new Step(
 				"Brew the espresso for an optimal time(usually around 22 seconds)"));
-		espressoShot.setRecipe(stepZero);
+		//espressoShot.setRecipe(stepZero);
 		
 		return espressoShot;
 	}
@@ -61,7 +61,7 @@ public class BasicRecipes {
 		Step stepTwo = stepOne.addNextStep(new AddComponentStep(es));
 		stepTwo.addNextStep(new AddComponentStep(foam));
 		
-		cappuccino.setRecipe(stepOne);
+		//cappuccino.setRecipe(stepOne);
 		return cappuccino;
 	}
 	
