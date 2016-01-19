@@ -3,6 +3,6 @@ package designCBR;
 import coffeeStructure.Component;
 
 public interface CBRRevise {
-
-	public void revise(Component component);
+	
+	public boolean revise(Component component);
 }

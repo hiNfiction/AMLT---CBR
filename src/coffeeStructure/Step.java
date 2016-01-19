@@ -1,5 +1,12 @@
 package coffeeStructure;
 
+/**
+ * This class is modeling a recipe's step, which can be:
+ * 	- specific: e.g. adding a certain component
+ * 	- general: using the description field to specify it
+ * @author Stefania
+ *
+ */
 public class Step {
 	
 	Step nextStep;

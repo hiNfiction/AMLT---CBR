@@ -1,31 +1,38 @@
 package designCBR;
 
-import coffeeStructure.CoffeeRecipe;
+import parser.XMLRecipesParser;
 import recipesStorage.BasicRecipes;
+import utils.Distances;
+import coffeeStructure.CoffeeRecipe;
+import coffeeStructure.Ingredient;
+import coffeeStructure.Ingredient.Unit;
 
 public class Main {
 
-	public static void main(String[] args) {
-
-		BasicRecipes basicR = new BasicRecipes();
-		RecipesMemory recipesMem = new RecipesMemory();
-		CoffeeRecipe espressoShot = basicR.makeEspressoShot();
-		CoffeeRecipe cappuccino = basicR.makeCappuccino();
-		recipesMem.addComponent(espressoShot);
-		recipesMem.addComponent(cappuccino);
-		/**
-		System.out.println("Print recipes database");
-		System.out.println(recipesMem);
-		System.out.println("\n__Print Espresso Shot ingredients__");
-		System.out.println(espressoShot.getComponents());
-		System.out.println("__Print Espresso Shot first step of recipe__");
-		System.out.println(espressoShot.getRecipe());
-
-		System.out.println("\n__Print Cappuccino ingredients__");
-		System.out.println(cappuccino.getComponents());
-		System.out.println("__Print Cappuccino first step of recipe__");
-		System.out.println(cappuccino.getRecipe());
-		**/
+	public static void main(String[] args) {		
+		
+		// Create Case-Base Memory
+		XMLRecipesParser parser = new XMLRecipesParser();
+		RecipesMemory caseMemory = null;
+		try {
+			caseMemory = (RecipesMemory) parser.parseXML();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if(caseMemory == null)
+			System.out.println("no recipes");
+		CBR cbr = new CBR(caseMemory);
+		
+		// Use CBR on an example
+		System.out.println("=========================================================");
+		System.out.println("Recipies in database:\n\t" + caseMemory.getComponents().keySet());
+		System.out.println(((CoffeeRecipe)caseMemory.getComponents().get("Cappuccino")).getEntireCoffeeRecipe());
+		CoffeeRecipe newRecipe = new CoffeeRecipe("Wet Espresso Shot");
+		System.out.println(newRecipe.getEntireCoffeeRecipe());
+		
+		System.out.println("... After system processing ...\n");
+		cbr.applyCBR(newRecipe);
+		System.out.println("=========================================================");
+		
 	}
-
 }

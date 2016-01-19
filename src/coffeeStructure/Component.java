@@ -1,5 +1,11 @@
 package coffeeStructure;
 
+/**
+ * It is used for a coffee recipe
+ * Can be either an ingredient or a coffee recipe
+ * @author Stefania
+ *
+ */
 public abstract class Component {
 
 	String name;
