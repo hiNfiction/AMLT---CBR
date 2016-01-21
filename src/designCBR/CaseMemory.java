@@ -11,15 +11,15 @@ import coffeeStructure.Component;
  *
  */
 public abstract class CaseMemory {
-	protected Map memory;
+	protected Map<String, Component> memory;
 
 	public CaseMemory(){
 		memory = new HashMap<String,Component>();
 	}
 	
 	public abstract void addComponent(Component component);
-	public abstract Map getComponents();
-	public abstract void setComponent(Map components);
+	public abstract Map<?, ?> getComponents();
+	public abstract void setComponent(Map<?, ?> components);
 	
 	@Override
 	public String toString() {

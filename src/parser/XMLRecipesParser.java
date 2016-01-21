@@ -181,18 +181,15 @@ public class XMLRecipesParser implements XMLParser{
 	
 	Step processStep(String stepDescription, CoffeeRecipe recipe) {
 		
-		Step step = null;
 		String restOfDescr = stepDescription.toLowerCase();
-		String finalDescr = "";
 		String addStr = "add ";
 		
 		int searchIndex = restOfDescr.indexOf("add ");
 		if(searchIndex > -1) {
 			restOfDescr = restOfDescr.substring(searchIndex + addStr.length());
-			searchIndex += addStr.length();
 			for(Component comp: recipe.getComponents()) {
-				comp.toString();
-				if(restOfDescr.indexOf(comp.getName(), searchIndex) > -1) {
+				String compStr = comp.getName().toLowerCase();
+				if(restOfDescr.indexOf(compStr) > -1) {
 					return new AddComponentStep(comp);
 				}
 			}

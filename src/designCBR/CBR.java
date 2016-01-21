@@ -1,5 +1,6 @@
 package designCBR;
 
+import utils.StringOps;
 import coffeeStructure.CoffeeRecipe;
 import coffeeStructure.Component;
 
@@ -18,8 +19,10 @@ public class CBR {
 		cbrReviseComponent = new CBRReviseImpl(this.caseMemory);
 		cbrRetainComponent = new CBRRetainImpl(this.caseMemory);
 	}
-	
+
 	public boolean applyCBR(Component newRecipe){
+		
+		newRecipe.setName(StringOps.capitalizeString(newRecipe.getName()));
 		Component similarComponent = (Component) cbrRetrieveComponent.retrieveSimilarComponent(newRecipe);
 		newRecipe = cbrReuseComponent.reuse(similarComponent,newRecipe);
 		System.out.println(((CoffeeRecipe)similarComponent).getEntireCoffeeRecipe());

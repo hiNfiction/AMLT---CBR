@@ -1,17 +1,16 @@
 package designCBR;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import parser.XMLRecipesParser;
-import recipesStorage.BasicRecipes;
-import utils.Distances;
 import coffeeStructure.CoffeeRecipe;
-import coffeeStructure.Ingredient;
-import coffeeStructure.Ingredient.Unit;
 
 public class Main {
-
-	public static void main(String[] args) {		
+	
+	public static RecipesMemory createCBMemory() {
 		
-		// Create Case-Base Memory
 		XMLRecipesParser parser = new XMLRecipesParser();
 		RecipesMemory caseMemory = null;
 		try {
@@ -21,18 +20,46 @@ public class Main {
 		}
 		if(caseMemory == null)
 			System.out.println("no recipes");
-		CBR cbr = new CBR(caseMemory);
-		
+		return caseMemory;
+	}
+	public static void testCBR(CBR cbr, RecipesMemory caseMemory, String recipeName) {
 		// Use CBR on an example
 		System.out.println("=========================================================");
 		System.out.println("Recipies in database:\n\t" + caseMemory.getComponents().keySet());
-		System.out.println(((CoffeeRecipe)caseMemory.getComponents().get("Cappuccino")).getEntireCoffeeRecipe());
-		CoffeeRecipe newRecipe = new CoffeeRecipe("Wet Espresso Shot");
-		System.out.println(newRecipe.getEntireCoffeeRecipe());
+		CoffeeRecipe newRecipe = new CoffeeRecipe(recipeName);
 		
-		System.out.println("... After system processing ...\n");
-		cbr.applyCBR(newRecipe);
+		System.out.println("... After system reasoning ...\n");
+		boolean succeeded = cbr.applyCBR(newRecipe);
+		if(!succeeded) {
+			System.out.println("Unfortunately, we cannot fulfill your request."
+					+ " We are sorry for the inconvenience");
+		}
 		System.out.println("=========================================================");
+		System.out.println("Recipies in after-database:\n\t" + caseMemory.getComponents().keySet());
+	}
+
+	public static void main(String[] args) {		
+		
+		// Create Case-Base Memory
+		RecipesMemory caseMemory = createCBMemory();
+		
+		CBR cbr = null;
+		cbr = new CBR(caseMemory);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try {
+        	boolean contFlag = true;
+    		while(contFlag) {
+    	        System.out.print("Enter the desired recipe name:\n");    			
+				String recipeName = br.readLine();
+		        testCBR(cbr, caseMemory, recipeName);
+    	        System.out.print("Would you wish to continue? y/n\n"); 		
+				String response = br.readLine();
+    	        if(response.equals("n"))
+    	        	contFlag = false;
+    		}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 	}
 }

@@ -65,7 +65,7 @@ public class CoffeeRecipe extends Component {
 				// Find component
 				Component foundComp = getComponentByName(acStep.getComponent().getName());
 				if(foundComp != null) {
-					steps.add(new AddComponentStep(foundComp));
+					this.steps.add(new AddComponentStep(foundComp));
 				}
 				else
 					System.err.println("Component of add step not found");
